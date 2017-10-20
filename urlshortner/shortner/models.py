@@ -2,9 +2,9 @@ from django.conf import settings
 from django.db import models
 from django.utils.encoding import smart_text
 #from django.core.urlresolvers import reverse
-from django_hosts.resolvers import reverse
+# from django_hosts.resolvers import reverse
 # Create your models here.
-from .utils import code_generator, create_shortcode
+from .utils1 import code_generator, create_shortcode
 from .validators import validate_url, validate_dot_com
 
 SHORTCODE_MAX = getattr(settings, "SHORTCODE_MAX", 15)
@@ -49,9 +49,9 @@ class URL(models.Model):
     def __str__(self):
         return smart_text(self.url)
 
-    def get_short_url(self):
-        url_path = reverse("scode", kwargs={'shortcode': self.shortcode}, host='www', scheme='http')
-        return url_path
+    # def get_short_url(self):
+    #     url_path = reverse("scode", kwargs={'shortcode': self.shortcode}, host='www', scheme='http')
+    #     return url_path
 
 
 

@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'shortner',
-    'django_hosts',
 ]
 
 MIDDLEWARE = [
@@ -131,6 +130,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 SHORTCODE_MAX = 15
 SHORTCODE_MIN = 6
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 
 REST_FRAMEWORK = {
