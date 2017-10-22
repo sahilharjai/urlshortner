@@ -1,5 +1,5 @@
 from .utils import *
-from .final_prediction import pred
+#from final_prediction import pred
 
 def get_features(url):
 	suspicious_url=check_suspicious(url)
@@ -34,7 +34,5 @@ def get_features(url):
 
 	#print(pred(my_list))
 	return my_list
-
-#get_features("http://www.facebook.com/sahil.harjai.5")
 
 

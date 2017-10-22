@@ -42,7 +42,7 @@ class URL(models.Model):
     def save(self, *args, **kwargs):
         if self.shortcode is None or self.shortcode == "":
             self.shortcode = create_shortcode(self)
-        if not "http" in self.url:
+        if not "http" in self.url and not "https":
             self.url = "http://" + self.url
         super(URL, self).save(*args, **kwargs)
 

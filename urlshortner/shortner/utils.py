@@ -7,11 +7,14 @@ import urllib
 from xml.dom import minidom
 
 def get_ip_address(domain_name):
-	command="host " + domain_name
-	process=os.popen(command)
-	results=str(process.read())
-	marker=results.find("has address")+12
-	return results[marker:].splitlines()[0]
+	try:
+		command="host " + domain_name
+		process=os.popen(command)
+		results=str(process.read())
+		marker=results.find("has address")+12
+		return results[marker:].splitlines()[0]
+	except:
+		return None
 
 def check_suspicious(url):
 	if(len(url)<54):
@@ -125,28 +128,31 @@ def get_domain_reg_len(domain_name):
 
 
 def port_check(ip_address):
-	options="-F"
-	command="nmap "+options+" "+ip_address
-	process=os.popen(command)
-	results=str(process.read())
-	results=results.lower()
-	if (results.find('ftp')!=-1):
+	try:
+		options="-F"
+		command="nmap "+options+" "+ip_address
+		process=os.popen(command)
+		results=str(process.read())
+		results=results.lower()
+		if (results.find('ftp')!=-1):
+			return 1
+		if (results.find('ssh')!=-1):
+			return 1
+		if(results.find('remote desktop')!=-1):
+			return 1
+		if(results.find('telnet')!=-1):
+			return 1
+		if(results.find('smb')!=-1):
+			return 1
+		if(results.find('mssql')!=-1):
+			return 1
+		if(results.find('oracle')!=-1):
+			return 1
+		if(results.find('mysql')!=-1):
+			return 1
+		return -1
+	except:
 		return 1
-	if (results.find('ssh')!=-1):
-		return 1
-	if(results.find('remote desktop')!=-1):
-		return 1
-	if(results.find('telnet')!=-1):
-		return 1
-	if(results.find('smb')!=-1):
-		return 1
-	if(results.find('mssql')!=-1):
-		return 1
-	if(results.find('oracle')!=-1):
-		return 1
-	if(results.find('mysql')!=-1):
-		return 1
-	return -1
 
 
 def find_ele_with_attribute(dom,ele,attribute):

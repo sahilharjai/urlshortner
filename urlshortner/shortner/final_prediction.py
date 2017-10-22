@@ -7,7 +7,7 @@ import pickle
 
 def pred(my_list):
     #print(my_list.shape())
-    filename= './best_model.sav'
+    filename= '/home/sahil/Desktop/urlshortner/urlshortner/shortner/best_model.sav'||'best_model.sav'
     #r=open(filename,'rb')
     #filename=filename.encode('utf-8')
     best_model = pickle.load(open(filename,'rb'),encoding='latin1')
@@ -16,8 +16,9 @@ def pred(my_list):
     ans=np.asarray(list2)
     #ans.reshape(-1,1)
 
-    value= best_model.predict(ans)
-    if value[0]==1:
-	    print('Phishing')
-    else:
-	    print('Safe')
+    value= best_model.predict_proba(ans)
+    return value
+    # if value[0]==1:
+	   #  print('Phishing')
+    # else:
+	   #  print('Safe')

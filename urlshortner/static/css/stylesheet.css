@@ -1627,7 +1627,7 @@ ul.lead li {
   text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2);
 }
 .formbox{
-  width:30%;
+  
   margin-left:36%;
   margin-right:36%;
   margin-top: calc(8% - 64px);
@@ -1654,7 +1654,6 @@ ul.lead li {
     width: 100%!important;
   }
   .formbox{
-    width: 100%!important;
     margin-top: calc(30% - 64px);
     margin-left:0%;
     margin-right:0%;
