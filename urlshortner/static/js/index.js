@@ -65,7 +65,7 @@ $(function () {
           {
             $result.append('<span class="phishing">Phishing<span>')
           }
-          $shortUrl.html('<a href="'+data.longUrl+'">'+data.shortCode+'</a><button class="btn btn-filled hover-light copy"> Copy </button>');
+          $shortUrl.html('<a id="trgt" href="'+data.longUrl+'">'+data.shortCode+'</a><button id="copy" class="btn btn-filled hover-light copy" data-clipboard-target="#trgt"> Copy </button>');
           if(data.site_popularity==-1)
           {
             site_popularity = 'High'

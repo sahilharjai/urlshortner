@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Minor | URL Shortener</title>
     <link href="https://codingblocks.com/css/themify-icons.css" rel="stylesheet" type="text/css" media="all"/>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
+
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
     <link href="{% static 'css/index.css' %}" rel="stylesheet">
     <link href="{% static 'css/stylesheet.css' %}" rel="stylesheet">
@@ -194,6 +196,21 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    var clipboard= new Clipboard('#copy');
+    clipboard.on('success', function(e) {
+    alert("Link Copied to your Clipboard")
+
+    e.clearSelection();
+});
+
+clipboard.on('error', function(e) {
+    console.error('Action:', e.action);
+    console.error('Trigger:', e.trigger);
+});
+
+</script>
+
 </body>
 
 </html>
