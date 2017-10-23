@@ -82,7 +82,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'shortner',
-        'PASSWORD':'connect',
+        'PASSWORD':'sud96',
         'PORT':3306,
         'HOST':'localhost',
         'USER':'root'
