@@ -28,11 +28,11 @@ $(function () {
     } else {
       $modal.css("display","block");
       $modal.html('<div id="loader"></div>')
-      $.post('http://pd.ml:8000/api/url-create/', {
+      $.post('/api/url-create/', {
         url: $LongURL.val(),
       }, function (data) {
           console.log(data)
-          if(data.result==1)
+          if(data.site_popularity<=0&&data.google_index===-1)
           {
             result='<span class="safe">Safe<span>'
             shortCode_result = '<div id="shortUrl" class="short"><a id="trgt" href="'+data.longUrl+'">pd.ml:8000/'+data.shortCode+'</a><button id="copy" class="btn btn-filled hover-light copy" data-clipboard-target="#trgt"> Copy </button></div>'

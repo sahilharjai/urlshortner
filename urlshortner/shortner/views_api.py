@@ -24,6 +24,7 @@ class URLCreateView(generics.CreateAPIView):
 		if url_count != 0:
 			time.sleep(3)
 			url_obj = URL.objects.filter(url=url)[0]
+			print("hello")
 			analyse_obj = get_object_or_404(AnalyseUrl,shortcode=url_obj)
 
 		else:
@@ -47,12 +48,12 @@ class URLCreateView(generics.CreateAPIView):
 					contains_at_the_rate=context[3],
 					cotains_double_slash=context[4],
 					contains_hyphen=context[5],
-					https_token=context[6],
-					subdomain_length=context[7],
-					has_https=context[8],
+					https_token=context[10],
+					has_https=context[7],
+					subdomain_length=context[6],
 					ports=context[9],
-					dns_record=context[10],
 					age_of_domain=context[11],
+					dns_record=context[8],
 					existing_dns_record=context[12],
 					site_popularity=context[13],
 					a_tag=context[14],
@@ -97,3 +98,10 @@ class URLRedirectView(APIView):
             raise Http404
         obj = qs.first()
         return HttpResponseRedirect(obj.url)
+
+
+'''
+	my_list=[is_ip,suspicious_url,shortened_url,contains_at_the_rate,contains_double_slash,
+	contains_hyphen,check_subdomains,has_https,domain_reg_len,ports,https_token,
+	age_domain,dns_record,popularity,a_tag,form_tag,using_mail,abnormalUrl,google_index]
+'''
