@@ -49,12 +49,29 @@ class URL(models.Model):
     def __str__(self):
         return smart_text(self.url)
 
-    # def get_short_url(self):
-    #     url_path = reverse("scode", kwargs={'shortcode': self.shortcode}, host='www', scheme='http')
-    #     return url_path
 
-
-
+class AnalyseUrl(models.Model):
+    shortcode = models.ForeignKey(URL,on_delete=models.CASCADE)
+    result = models.IntegerField()
+    site_popularity = models.IntegerField()
+    length_of_url = models.IntegerField()
+    existing_dns_record = models.IntegerField()
+    age_of_domain = models.IntegerField()
+    ports = models.IntegerField()
+    reliable_ip = models.IntegerField()
+    shortened_url = models.IntegerField()
+    contains_at_the_rate = models.IntegerField()
+    cotains_double_slash = models.IntegerField()
+    contains_hyphen = models.IntegerField()
+    https_token = models.IntegerField()
+    subdomain_length = models.IntegerField()
+    has_https = models.IntegerField()
+    dns_record = models.IntegerField()
+    a_tag = models.IntegerField(default=-1)
+    form_tag = models.IntegerField(default=-1)
+    using_mail = models.IntegerField(default=-1)
+    abnormal_url = models.IntegerField(default=-1)
+    google_index = models.IntegerField(default=-1)
 
 
 

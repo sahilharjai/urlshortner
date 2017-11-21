@@ -25,7 +25,7 @@ SECRET_KEY = 'p9b-l05)r(32$#f74i^qtmq4+)m!zy4u5f5k%dc4%atvz_)jth'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 DEFAULT_HOST = 'www'
 ROOT_URLCONF = 'kirr.urls'
 ROOT_HOSTCONF = 'kirr.hosts'
