@@ -23,5 +23,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api/url-create/$', views_api.URLCreateView.as_view(),name='url-create'),
     url(r'^$',views.URLHomeView.as_view(),name='home'),
+    url(r'^analyse/(?P<shortcode>[\w-]+)/$',views.URLAnalyseView.as_view(),name='analyse'),
     url(r'^(?P<shortcode>[\w-]+)/$', views_api.URLRedirectView.as_view(), name='scode'), 
 ]+ static.static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
