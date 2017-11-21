@@ -32,7 +32,7 @@ $(function () {
         url: $LongURL.val(),
       }, function (data) {
           console.log(data)
-          if(data.site_popularity<=0&&data.google_index===-1)
+          if(data.site_popularity<=0||data.google_index===-1||data.has_https==-1)
           {
             result='<span class="safe">Safe<span>'
             shortCode_result = '<div id="shortUrl" class="short"><a id="trgt" href="'+data.longUrl+'">pd.ml:8000/'+data.shortCode+'</a><button id="copy" class="btn btn-filled hover-light copy" data-clipboard-target="#trgt"> Copy </button></div>'
