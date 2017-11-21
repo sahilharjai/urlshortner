@@ -7,7 +7,7 @@ import pickle
 
 def pred(my_list):
     #print(my_list.shape())
-    filename= '/home/sahil/Desktop/urlshortner/urlshortner/shortner/best_model.sav'
+    filename= '/home/sudhanshu/Desktop/urlshortner/urlshortner/shortner/best_model.sav'
     #r=open(filename,'rb')
     #filename=filename.encode('utf-8')
     best_model = pickle.load(open(filename,'rb'),encoding='latin1')

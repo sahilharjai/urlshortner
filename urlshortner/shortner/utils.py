@@ -103,7 +103,8 @@ def get_https(url):
 	cmp_str=cmp_str.lower()
 	if(cmp_str=="https://"):
 		return -1
-	return 1
+	else:
+		return 1
 
 def get_domain_reg_len(domain_name):
 	try:
