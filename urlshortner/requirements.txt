@@ -3,7 +3,7 @@ certifi==2017.7.27.1
 chardet==3.0.4
 cycler==0.10.0
 decorator==4.1.2
-Django==1.11.6
+Django==1.11.29
 django-hosts==2.0
 django-rest-framework==0.1.0
 djangorestframework==3.7.0
